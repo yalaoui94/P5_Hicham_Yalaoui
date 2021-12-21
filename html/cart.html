@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Platefore magic de e-commerce">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel =" preconnect " href =" https://fonts.googleapis.com " >
+    <link  rel =" preconnect " href =" https://fonts.gstatic.com " crossorigin >
+    <link  href =" https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap " rel =" feuille de style ">
+    <link 
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/panier.css">
+    
+    <title>Kanap</title>
+</head>
+<body>
+    <head>
+        <script src=../js/cart.js></script>
+        <div class="limitedWidthBlockContainer informations">
+            <div class="limitedWidthBlock">
+                <ul>
+                    <li><img src="../images/icons/phone.svg" alt="Logo téléphone" class ="informations__phone"> 01 23 45 67 89 </li>
+                    <li><img src="../images/icons/mail.svg" alt="Logo d'une envloppe" class =" informations__mail " > support@name.com </li>
+                    <li><img src="../images/icons/adress.svg" alt="Logo point de géolocalisation" class =" informations__address " > 10 quai de la charente 75019 Paris 19</li>
+                </ul>
+            </div>
+        </div>
+        <div class="limitedWidthBlockContainer menu ">
+            <div class="limitedWidthBlock">
+            <a href="index.html">
+                <img class="logo" src="../images/logo.png" alt="Logo de l'entreprise">
+            </a>
+            <nav>
+                <ul>
+                    <a href="index.html"><li>Accueil</li>
+                        <i class="fas fa-home" style=" margin: 5%"></i>
+                    </a>
+                    <a href="cart.html"><li>Panier</li>
+                        <i class="fas fa-cart-arrow-down" style="margin: 5%"></i>  
+                    </a>
+                    <a href=""><li>Livraison</li>
+                        <i class="fas fa-truck" style="margin: 5%"></i>
+                    </a>
+                </ul>
+            </nav>
+            </div>
+        </div>
+        <img class="banniere" src="../images/banniere.PNG" alt="banniere">
+        </head>
+        <main class=" limitedWidthBlockContainer">
+            <div class="limitedWidthBlock" id="cartAndFormContainer">
+                <h1>Votre panier</h1>
+                <section class="panier">
+                    <section id="cart__items">
+                        <!--<article class="cart__item" data-id="{product-ID}" data-color="{product-color}">
+                            <div class="cart__item__img">
+                                <img src="../images/product01.jpg" alt="photographie d'un canapé">
+                            </div>
+                            <div class="cart__item__content">
+                                <div class="cart__item__content">
+                                    <div class="cart__item__content__description">
+                                        <h2>Nom du produit</h2>
+                                        <p>vert</p>
+                                        <p>42,00€</p> 
+                                        </div>
+                                        <div class="cart__item__content__settings">
+                                            <div class="cart__item__content__settings__quantity">
+                                                <p>Qté</p>
+                                                <input type="number" class="itemQuantity" name="itemQuantity" min="1" max="100" value="42">
+                                             </div>
+                                             <div class="cart__item__content__settings__delete">
+                                                 <p class="deleteItem">Supprimant</p>
+                                             </div>
+                                        </div>
+                                </div>
+                            </article>-->
+                    </section>
+                    <div class="cart__price">
+                        <p>Total (<span id="totalQuantity"><!--2--></span> articles):<span id="totalPrice"><!--84,00--></span></p>
+                    </div>
+                    <div class="cart__order">
+                        <form method="get" class="cart__order__form">
+                            <div class="cart__order__form__question">
+                                <label for="firstName">Prénom:</label>
+                                <input type="text" name="firstName" id="firstName" required>
+                                <p id="firstNameErrorMsg"><!--ci est message d'erreur--></p>
+                            </div>
+                            <div class="cart__order__form__question">
+                                <label for="lastName">Nom:</label>
+                                <input type="text" name="lastName" id="lastName" required>
+                                <p id="lastNameErrorMsg"></p>
+                            </div>
+                            <div class="cart__order__form__question">
+                                <label for="adresse"> Adresse :</label>
+                                <input type="text" name="adress" id="adress" required>
+                                <p id="adressErrorMsg"></p>
+                            </div>
+                            <div class="cart__order__form__question">
+                                <label for="ville" > Ville:</label>
+                                <input type="text" name="city" id="city" obligatoire>
+                                <p id="cityErrorMsg"></p>
+                            </div>
+                            <div class="cart__order__question">
+                                <label for="email">E-mail:</label>
+                                <input type="email" name="email" id="email" required>
+                                <p id="emailErrorMsg"></p>
+                            </div>
+                            <div class="cart__order__form__submit">
+                                <type inputmode="soumettre" value="Commandant ! " id="commande"> </type>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        </main>
+        <footer>
+            <div class="limitedWidthBlockContainer footerMain ">
+                <div class="limitedWidthBlock">
+                    <div>
+                        <img  class ="logo"   src="../images/logo.png" alt="Logo de l'entreprise">
+                    </div>
+                    <div>
+                        <p>10 quai de la charente <br>75019 Paris 19</p>
+                    </div>
+                    <div>
+                        <p>Téléphone: 01 23 45 67 89</p>
+                    </div>
+                    <div>
+                        <p>Courriel: support@kanapcom</p>
+                    </div>
+                </div>
+            </div>
+            <div class="limitedWidthBlockContainer footerSecondary">
+                <div class="limitedWidthBlock">
+                    <p> © Copyright 2021 - 2042 | Openclassrooms par Openclassrooms | Tous droits réservés | Alimenté par Yalaoui Hicham </p>
+                </div>
+            </div>
+          </footer>
+              
+          </body>
+          </html>
