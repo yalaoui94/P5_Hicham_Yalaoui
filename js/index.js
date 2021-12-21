@@ -1,6 +1,6 @@
 //initialisation des variables 
 let product = document.getElementById('items')
-
+console.log(product)
 
 //appel de l'API
 fetch ("http://localhost:3000/api/products")
@@ -11,7 +11,7 @@ fetch ("http://localhost:3000/api/products")
     articles.forEach( (kanap) => itemDisplay(kanap))
 })
 .catch(function (error){
-    alert( "Une erreur est survenue:"+error)
+    console.log( "Une erreur est survenue:"+error)
 })
 
 
