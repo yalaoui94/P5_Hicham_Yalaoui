@@ -11,9 +11,10 @@ const description = document.getElementById("description");
 const image = document.getElementsByClassName("item__img")[0];
 
 fetch("http://localhost:3000/api/products/"+id)
-    .then(function (res) {
+    .then(function (res){
         return res.json() 
     })
+
     .then (products =>{
 
         imageUrl = products.imageUrl
@@ -34,26 +35,16 @@ fetch("http://localhost:3000/api/products/"+id)
         <img  src=\"${products.imageUrl}\" alt=\"${products.altTxt}\"></img>
        `
         })
-    .catch (function (error) {
-        console.log(error)
-        if (id != url){
-            window.location.href = "index.html"
-        }
+        .catch (function (error) {
+            console.log(error)
+            if (id != url){
+                window.location.href = "index.html"
+            }
 
     })
-//Mise en place option couleurs canapé 
-    function displayOption(products) {
-        for(let i=0; i< products.colors.length; i++) {
-            
-            var option = new Option();
-            option.text = products.colors[i];
-            option.value = products.colors[i];
-            let optionColor = document.getElementById("colors");
-            optionColor.appendChild(option);
-        }
-    } 
-//Création du ShoppingItem(ligne de produit dans le panier) et mise en place localstorage
-class ShoppingItem {
+
+    //Création du ShoppingItem(ligne de produit dans le panier) et mise en place localstorage
+    class ShoppingItem {
     constructor (id, option, quantity){
         this.id = id;
         this.option = option;
@@ -61,13 +52,13 @@ class ShoppingItem {
       
      }
 } 
-const quantity = document.getElementById('quantity');
-const option = document.getElementById("colors");
+    const quantity = document.getElementById('quantity');
+    const option = document.getElementById("colors");
 
 //Mise en place du bouton
-const addToCart = document.getElementById("addToCart");
+    const addToCart = document.getElementById("addToCart");
 // Enregistrer le bouton 
-addToCart.addEventListener("click", (event) =>{
+    addToCart.addEventListener("click", (event) =>{
      event.preventDefault();
     let shoppingItem = {
         quantity: quantity.value,
@@ -85,14 +76,14 @@ addToCart.addEventListener("click", (event) =>{
  })
  //Fenêtre vérification et validation
  const popupConfirmation = () => {
-     if (window.confirm (` Confirmer en appuyant sur Ok ou revenir à l'accueil avec Annuler`))
-     {
-         window.location.href = "cart.html"
-         
-     }else{
-        window.location.href = "index.html"
-     }
- } 
+    if (window.confirm (` Confirmer en appuyant sur Ok ou revenir à l'accueil avec Annuler`))
+    {
+        window.location.href = "cart.html"
+        
+    }else{
+       window.location.href = "index.html"
+    }
+} 
 
 //Création localStorage avec deux possibilités et une sécurité pour les doublons
 function localstorage (shoppingItem){
