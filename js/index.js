@@ -1,4 +1,3 @@
-//initialisation des variables 
 let product = document.getElementById('items')
 console.log(product)
 
@@ -11,7 +10,7 @@ fetch ("http://localhost:3000/api/products")
     articles.forEach( (kanap) => itemDisplay(kanap))
 })
 .catch(function (error){
-    console.log( "Une erreur est survenue:"+error)
+    console( "Une erreur est survenue:"+error)
 })
 
 
@@ -20,7 +19,7 @@ fetch ("http://localhost:3000/api/products")
 function itemDisplay (kanap){ 
     console.log("ok");
     let newA =document.createElement("a");
-    newA.setAttribute("href",'./product.html?id='+kanap.id);
+    newA.setAttribute("href",'./product.html?id='+kanap._id);
 
     newA.innerHTML=
     `
@@ -33,4 +32,8 @@ function itemDisplay (kanap){
     `
     product.appendChild(newA)
     console.log(newA)
-}
+
+    
+    
+};   
+
