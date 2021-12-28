@@ -1,107 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Platefore magic de e-commerce">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  rel =" preconnect " href =" https://fonts.googleapis.com " >
-    <link  rel =" preconnect " href =" https://fonts.gstatic.com " crossorigin >
-    <link  href =" https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap " rel =" feuille de style ">
+<html lang="fr">
+  <head>
+    <title>Kanap</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Plateforme incroyable de e-commerce">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link 
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
     integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
     crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Kanap</title>
-</head>
-<body>
-    <head>
-        <div class="limitedWidthBlockContainer informations">
-            <div class="limitedWidthBlock">
-                <ul>
-                    <li><img src="../images/icons/phone.svg" alt="Logo téléphone" class ="informations__phone"> 01 23 45 67 89 </li>
-                    <li><img src="../images/icons/mail.svg" alt="Logo d'une envloppe" class =" informations__mail " > support@kanap.com</li>
-                    <li><img src="../images/icons/adress.svg" alt="Logo point de géolocalisation" class =" informations__address " > 10 quai de la charente 75019 Paris 19 </li>
-                </ul>
-            </div>
+    <link href="../css/style.css" rel="stylesheet" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <header>
+      <div class="limitedWidthBlockContainer informations">
+        <div class="limitedWidthBlock">
+          <ul>
+            <li><img src="../images/icons/phone.svg" alt="logo de téléphone" class="informations__phone">01 23 45 67 89</li>
+            <li><img src="../images/icons/mail.svg" alt="logo d'une enveloppe" class="informations__mail">support@name.com</li>
+            <li><img src="../images/icons/adress.svg" alt="logo d'un point de géolocalisation" class="informations__address">01 23 45 67 89</li>
+          </ul>
         </div>
-        <div class="limitedWidthBlockContainer menu ">
-            <div class="limitedWidthBlock">
-            <a href="index.html">
-                <img class="logo" src="../images/logo.png" alt="Logo de l'entreprise">
-            </a>
-            <nav>
-                <ul>
-                    <a href="index.html"><li>Accueil</li>
-                        <i class="fas fa-home" style=" margin: 5%"></i>
-                    </a>
-                    <a href="cart.html"><li>Panier</li>
-                        <i class="fas fa-cart-arrow-down" style="margin: 5%"></i>  
-                    </a>
-                    <a href=""><li>Livraison</li>
-                        <i class="fas fa-truck" style="margin: 5%"></i>
-                    </a>
-                </ul>
-            </nav>
-            </div>
+      </div>
+      <div class="limitedWidthBlockContainer menu">
+        <div class="limitedWidthBlock">
+          <a href="./index.html">
+            <img class="logo" src="../images/logo.png" alt="Logo de l'entreprise">
+          </a>
+          <nav>
+            <ul>
+                <a href="index.html"><li>Accueil</li>
+                    <i class="fas fa-home" style=" margin: 5%"></i>
+                </a>
+                <a href="cart.html"><li>Panier</li>
+                    <i class="fas fa-cart-arrow-down" style="margin: 5%"></i>  
+                </a>
+                <a href=""><li>Livraison</li>
+                    <i class="fas fa-truck" style="margin: 5%"></i>
+                </a>
+            </ul>
+        </nav>
         </div>
-        <img class="banniere" src="../images/banniere.PNG" alt="Banniere">  
-    </head>
-  <main class="limitedWidthBlockContainer">
-      <div class=" limitedWidthBlock">
-          <div class="titres">
-              <h1>Nos Produits</h1>
-              <h2>Une gamme d'articles exclusifs</h2>
-          </div>
-          <section class="items" id="items">
-<!--<a href="product.html?id=42">
-         <article>
-             <img src="images/product01.jpg" alt="Kanap name1">
-             <h3 class="productName">Kanap name1</h3>
-             <p class="productDescription"></p> 
-        </article>
-</a-->
-
-          </section>
       </div>
-  </main>
-  <footer>
-  <div class="limitedWidthBlockContainer footerMain ">
+      <img class="banniere" src="../images/banniere.png" alt="Baniere">
+    </header>
+
+    <main class="limitedWidthBlockContainer">
       <div class="limitedWidthBlock">
-          <div>
-              <img  class ="logo"   src="../images/logo.png" alt="Logo de l'entreprise">
-          </div>
-          <div>
-              <p>10 quai de la charente <br>75019 Paris 19</p>
-          </div>
-          <div>
-              <p>Téléphone: 01 23 45 67 89</p>
-          </div>
-          <div>
-              <p>Courriel: support@kanap.com</p>
-          </div>
-
+        <div class="titles">
+          <h1>Nos produits</h1>
+          <h2>Une gamme d'articles exclusifs</h2>
+        </div>
+        <section class="items" id="items"> 
+          <!-- <a href="./product.html?id=42">
+            <article>
+              <img src=".../product01.jpg" alt="Lorem ipsum dolor sit amet, Kanap name1">
+              <h3 class="productName">Kanap name1</h3>
+              <p class="productDescription">Dis enim malesuada risus sapien gravida nulla nisl arcu. Dis enim malesuada risus sapien gravida nulla nisl arcu.</p>
+            </article>
+          </a>  -->
+        </section>
       </div>
-     
-  </div>
-  <section class="flex-column-centre">
-      <div class=" logos-reseau flex-around flex-centre">
-          <a href="#"><i class="fab fa-facebook-square fa-3x"></i></a>
-          <a href="#"><i class="fab fa-instagram fa-3x"></i></a>
-          <a href="#"><i class="fab fa-twitter-square fa-3x"></i></a>
+    </main>
+    
+    <footer>
+      <div class="limitedWidthBlockContainer footerMain">
+        <div class="limitedWidthBlock">
+          <div>
+            <img class="logo" src="../images/logo.png" alt="Logo de l'entreprise">
+          </div>
+          <div>
+            <p>10 quai de la charente <br>75019 Paris 19</p>
+          </div>
+          <div>
+            <p>Téléphone : 01 23 45 67 89</p>
+          </div>
+          <div>
+            <p>Email : support@name.com</p>
+          </div>
+        </div>
       </div>
-
-  </section>
- 
-
-  <div class="limitedWidthBlockContainer footerSecondary">
-      <div class="limitedWidthBlock">
-          <p> © Copyright 2021 - 2042 | Openclassrooms par Openclassrooms | Tous droits réservés | Alimenté par Yalaoui Hicham </p>
+      <div class="limitedWidthBlockContainer footerSecondary">
+        <div class="limitedWidthBlock">
+          <p>© Copyright 2021 - 2042 | Openclassrooms by Openclassrooms | All Rights Reserved | Powered by <3</p>
+        </div>
       </div>
-  </div>
-</footer>
-<script src=../js/index.js></script>
-</body>
+    </footer>
+  <script src="../js/index.js"></script>
+  </body>
 </html>
