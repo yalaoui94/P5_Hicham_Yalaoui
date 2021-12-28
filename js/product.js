@@ -4,118 +4,76 @@ let  url  =  new  URL ( document.location )
 console.log(url)
 let id = url.searchParams.get("id") 
 
-//Intégration des données de l'Api dans la page produit 
-const title = document.getElementById("title");
-const price = document.getElementById("price");
-const description = document.getElementById("description");
-const image = document.getElementsByClassName("item__img")[0];
 
-fetch("http://localhost:3000/api/products/"+id)
-    .then(function (res){
-        return res.json() 
-    })
-
-    .then (products =>{
-
-        imageUrl = products.imageUrl
-        altTxt = products.altTxt
-        document.title = products.name
-        title.textContent = products.name
-        price.textContent = products.price
-        description.textContent = products.description
-        let colors= products.colors
-        displayOption(products);
-        colors.innerHTML =
-        `
-        <option value=\"${products.colors}\"></option>
-        `
-        // console.log(products.colors)
-        image.innerHTML = 
-       `
-        <img  src=\"${products.imageUrl}\" alt=\"${products.altTxt}\"></img>
-       `
-        })
-        .catch (function (error) {
-            console.log(error)
-            if (id != url){
-                window.location.href = "index.html"
-            }
-
-    })
-
-    //Création du ShoppingItem(ligne de produit dans le panier) et mise en place localstorage
-    class ShoppingItem {
-    constructor (id, option, quantity){
-        this.id = id;
-        this.option = option;
-        this.quantity = quantity;
-      
-     }
-} 
-    const quantity = document.getElementById('quantity');
-    const option = document.getElementById("colors");
-
-//Mise en place du bouton
-    const addToCart = document.getElementById("addToCart");
-// Enregistrer le bouton 
-    addToCart.addEventListener("click", (event) =>{
-     event.preventDefault();
-    let shoppingItem = {
-        quantity: quantity.value,
-        option: option.value,
-        _id: id,
-        name: title.textContent,
-        price: price.textContent,
-        image: imageUrl,
-        alt : altTxt,
-    }
+// je fais appel à l'api avec l'id du produit 
+fetch('http://localhost:3000/api/products/'+ id)
+.then((res)=> {
     
-//Mise en fonction de localstorage
-    localstorage(shoppingItem)
-    console.log(shoppingItem)
- })
- //Fenêtre vérification et validation
- const popupConfirmation = () => {
-    if (window.confirm (` Confirmer en appuyant sur Ok ou revenir à l'accueil avec Annuler`))
-    {
-        window.location.href = "cart.html"
+    const response = res.json();
+    // je récupère les données du produit par son id
+    response.then(product =>{    
         
-    }else{
-       window.location.href = "index.html"
-    }
-} 
+        // Création et définition des éléments du DOM 
 
-//Création localStorage avec deux possibilités et une sécurité pour les doublons
-function localstorage (shoppingItem){
-    let shoppingCartLocalStorage = JSON.parse(localStorage.getItem("shoppingCart"));
-    console.log(shoppingCartLocalStorage);
-    // Si il y a un produit déjà enregistré
-    if (shoppingCartLocalStorage){
-                productChecked(shoppingCartLocalStorage, shoppingItem);
-                localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartLocalStorage));
-                console.log(shoppingCartLocalStorage);
-                popupConfirmation()
-        } else {
-    // Si il n'y a aucun produit    
-                shoppingCartLocalStorage =[];
-                shoppingCartLocalStorage.push(shoppingItem);
-                localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartLocalStorage));
-                console.log(shoppingCartLocalStorage);
-                popupConfirmation()
+        let addToCart = document.getElementById("addToCart");
+        let colors = document.getElementById("colors");
+        let img = document.createElement("img");
+        let quantity = document.querySelector("#quantity");
+        let price = document.getElementById("price").innerHTML = product.price;
+        let name = document.getElementById("title").innerHTML = product.name;
+        document.querySelector(".item__img").appendChild(img);
+        document.querySelector("#colors").insertAdjacentHTML("beforeend", product.colors.map(color => `<option id= "valueColor" value="${color}">${color}</option>`));
+        document.getElementById("description").innerHTML = product.description;
+        img.src = product.imageUrl;
+        img.alt= product.altTxt;
+        let image = img.src ;
+        let imageAlt= img.alt;
         
-    }
-    };
-    // Pour éviter les doublons dans le panier
-    function productChecked (shoppingCartLocalStorage, shoppingItem){
-        const object = shoppingCartLocalStorage.find(element => element.id === shoppingItem.id&& element.option === shoppingItem.option);
-        if (object){
-            const n = parseInt(object.quantity);
-            const m = parseInt(shoppingItem.quantity);
-            object.quantity = (n + m).toString();
-        } else {
-            shoppingCartLocalStorage.push(shoppingItem)
-          
-        }
-        return shoppingCartLocalStorage;
-       
-    }
+        // évènement au click du bouton "ajouter au panier"
+
+        addToCart.addEventListener("click",(e)=>{
+            e.preventDefault();
+            let color = colors.value;
+            let quantities = Number(quantity.value);
+
+            // création des données à stocker dans un  tableau
+            let infoProduct = {
+                id,
+                image,
+                imageAlt,               
+                name,
+                price,
+                color ,
+                quantities,
+            }; 
+            // création du tableau pour récupérer les données
+            let registerItem = []; 
+            // condition si le local storage contient un produit
+            if (localStorage.getItem("product")) {
+                // si j'ai des données, elles sont transférées dans le tableau 
+                registerItem = JSON.parse(localStorage.getItem("product")) ;
+
+                // je créé une variable qui vérifie si un produit a un id et une couleur identique dans mon tableau
+                let objIndex = registerItem.findIndex((item=> item.id === infoProduct.id && infoProduct.color === item.color));
+                // si cela est le cas, alors la quantité du produit est modifiée
+                if (objIndex !== -1) {
+                  registerItem[objIndex].quantities += quantities;
+                }
+                // sinon si ce n'est pas le cas, j'ajoute le produit dans mon tableau 
+                else if (objIndex === -1) {
+                    registerItem.push(infoProduct)
+                }
+                // j'envoi les produits de mon tableau dans le local storage et je convertis les données en chaine de caractère
+                localStorage.setItem("product",JSON.stringify(registerItem));
+            }
+            // sinon si le local storage est vide alors j'envoi les données avec un tableau et je convertis ces données en chaine de caractères
+            else{
+                registerItem.push(infoProduct);
+                localStorage.setItem("product",JSON.stringify(registerItem));
+            }
+        });
+    });
+});
+            
+
+            
