@@ -52,73 +52,72 @@
         </div>
         <img class="banniere" src="../images/banniere.PNG" alt="banniere">
         </head>
-        <main class=" limitedWidthBlockContainer">
-            <div class="limitedWidthBlock" id="cartAndFormContainer">
+        <main class="limitedWidthBlockContainer">
+            <div class="limitedWidthBlock" id="limitedWidthBlock">
+              <div class="cartAndFormContainer" id="cartAndFormContainer">
                 <h1>Votre panier</h1>
-                <section class="panier">
-                    <section id="cart__items">
-                        <!--<article class="cart__item" data-id="{product-ID}" data-color="{product-color}">
-                            <div class="cart__item__img">
-                                <img src="../images/product01.jpg" alt="photographie d'un canapé">
-                            </div>
-                            <div class="cart__item__content">
-                                <div class="cart__item__content">
-                                    <div class="cart__item__content__description">
-                                        <h2>Nom du produit</h2>
-                                        <p>vert</p>
-                                        <p>42,00€</p> 
-                                        </div>
-                                        <div class="cart__item__content__settings">
-                                            <div class="cart__item__content__settings__quantity">
-                                                <p>Qté</p>
-                                                <input type="number" class="itemQuantity" name="itemQuantity" min="1" max="100" value="42">
-                                             </div>
-                                             <div class="cart__item__content__settings__delete">
-                                                 <p class="deleteItem">Supprimant</p>
-                                             </div>
-                                        </div>
-                                </div>
-                            </article>-->
-                    </section>
-                    <div class="cart__price">
-                        <p>Total (<span id="totalQuantity"><!--2--></span> articles):<span id="totalPrice"><!--84,00--></span></p>
-                    </div>
-                    <div class="cart__order">
-                        <form method="get" class="cart__order__form">
-                            <div class="cart__order__form__question">
-                                <label for="firstName">Prénom:</label>
-                                <input type="text" name="firstName" id="firstName" required>
-                                <p id="firstNameErrorMsg"><!--ci est message d'erreur--></p>
-                            </div>
-                            <div class="cart__order__form__question">
-                                <label for="lastName">Nom:</label>
-                                <input type="text" name="lastName" id="lastName" required>
-                                <p id="lastNameErrorMsg"></p>
-                            </div>
-                            <div class="cart__order__form__question">
-                                <label for="adresse"> Adresse :</label>
-                                <input type="text" name="adress" id="adress" required>
-                                <p id="adressErrorMsg"></p>
-                            </div>
-                            <div class="cart__order__form__question">
-                                <label for="ville" > Ville:</label>
-                                <input type="text" name="city" id="city" obligatoire>
-                                <p id="cityErrorMsg"></p>
-                            </div>
-                            <div class="cart__order__question">
-                                <label for="email">E-mail:</label>
-                                <input type="email" name="email" id="email" required>
-                                <p id="emailErrorMsg"></p>
-                            </div>
-                            <div class="cart__order__form__submit">
-                                <type inputmode="soumettre" value="Commandant ! " id="commande"> </type>
-                            </div>
-                        </form>
-                    </div>
+                <section class="cart">
+                  <section id="cart__items">
+                   <!--  <article class="cart__item" data-id="{product-ID}">
+                      <div class="cart__item__img">
+                        <img src="../images/product01.jpg" alt="Photographie d'un canapé">
+                      </div>
+                      <div class="cart__item__content">
+                        <div class="cart__item__content__titlePrice">
+                          <h2>Nom du produit</h2>
+                          <p>42,00 €</p>
+                        </div>
+                        <div class="cart__item__content__settings">
+                          <div class="cart__item__content__settings__quantity">
+                            <p>Qté : </p>
+                            <input type="number" class="itemQuantity" name="itemQuantity" min="1" max="100" value="42">
+                          </div>
+                          <div class="cart__item__content__settings__delete">
+                            <p class="deleteItem">Supprimer</p>
+                          </div>
+                        </div>
+                      </div>
+                    </article> -->
+                  </section>
+                  <div class="cart__price">
+                    <p>Total (<span id="totalQuantity"><!-- 2 --></span> articles) : <span id="totalPrice"><!-- 84,00 --></span> €</p>
+                  </div>
+                  <div class="cart__order">
+                    <form method="get" class="cart__order__form">
+                      <div class="cart__order__form__question">
+                        <label for="firstName">Prénom: </label>
+                        <input type="text" name="firstName" id="firstName" required>
+                        <p id="firstNameErrorMsg"><!-- ci est un message d'erreur --></p>
+                      </div>
+                      <div class="cart__order__form__question">
+                        <label for="lastName">Nom: </label>
+                        <input type="text" name="lastName" id="lastName" required>
+                        <p id="lastNameErrorMsg"></p>
+                      </div>
+                      <div class="cart__order__form__question">
+                        <label for="address">Adresse: </label>
+                        <input type="text" name="address" id="address" required>
+                        <p id="addressErrorMsg"></p>
+                      </div>
+                      <div class="cart__order__form__question">
+                        <label for="city">Ville: </label>
+                        <input type="text" name="city" id="city" required>
+                        <p id="cityErrorMsg"></p>
+                      </div>
+                      <div class="cart__order__form__question">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" id="email" required>
+                        <p id="emailErrorMsg"></p>
+                      </div>
+                      <div class="cart__order__form__submit">
+                        <input type="submit" value="Commander !" id="order">
+                      </div>
+                    </form>
+                  </div>
                 </section>
+              </div>
             </div>
-        </div>
-        </main>
+          </main>
         <footer>
             <div class="limitedWidthBlockContainer footerMain ">
                 <div class="limitedWidthBlock">
@@ -132,7 +131,7 @@
                         <p>Téléphone: 01 23 45 67 89</p>
                     </div>
                     <div>
-                        <p>Courriel: support@kanapcom</p>
+                        <p>Courriel: support@kanap.com</p>
                     </div>
                 </div>
             </div>
