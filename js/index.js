@@ -52,11 +52,11 @@ function makeItem(name, image, id, description, altTxt) {
 /**
  * En cas d'échec de la requète, crée un article avec un message d'erreur
  */
-function showError() {
-  const newArticle2 = document.createElement("article");
-  newArticle2.innerHTML = "Il n'y a aucun article disponible à ce jour.<br>Merci de revenir nous voir ultérieurement.";
-  newArticle2.style.paddingBottom = "25px";
-  newArticle2.style.textAlign = "center";
-  const Parent = document.getElementById("items");
-  Parent.appendChild(newArticle2);
-}
+ function showError() {
+    const newArticle2 = document.createElement("article");
+    newArticle2.innerHTML = "Il n'y a aucun article disponible à ce jour.<br>Merci de revenir nous voir ultérieurement.";
+    newArticle2.style.paddingBottom = "25px";
+    newArticle2.style.textAlign = "center";
+    const Parent = document.getElementById("items");
+    Parent.appendChild(newArticle2);
+  }
