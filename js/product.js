@@ -60,7 +60,7 @@ fetch('http://localhost:3000/api/products/'+ id)
                   registerItem[objIndex].quantities += quantities;
                 }
                 // sinon si ce n'est pas le cas, j'ajoute le produit dans mon tableau 
-                else if (objIndex === -1) {
+                else {
                     registerItem.push(infoProduct)
                 }
                 // j'envoi les produits de mon tableau dans le local storage et je convertis les données en chaine de caractère
