@@ -202,7 +202,7 @@ city.addEventListener('input',(e)=>{
 email.addEventListener('input',(e)=>{
     e.preventDefault();
     if (regexEmail.test(email.value)==false) {
-        errorEmail.innerHTML = "Email que vous avez saisie incorrect";
+        errorEmail.innerHTML = "Email que vous avez saisie est incorrect";
     }else{
         errorEmail.innerHTML = "";
     }
